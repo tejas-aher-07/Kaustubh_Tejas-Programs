@@ -1,0 +1,65 @@
+#include<iostream>
+using namespace std;
+
+class Student
+{
+	public:
+		int roll,DOB,total_Marks;
+//	int student[10];
+	public:
+		void put(int i)
+		{
+		
+				cout<<"Enter Roll,DOB and TotalMarks for "<<i<<" Student : ";
+				cin>>roll>>DOB>>total_Marks;
+		}
+		
+		void get(int j)
+		{
+			
+				cout<<endl<<" Data of "<<j<<" Student is ";
+				cout<<roll<<"\t"<<DOB<<"\t"<<total_Marks;
+			
+		}
+		
+		int sort(int arr[], int min)
+		{
+			for(int i=1;i<=10;i++)
+			{
+				if( arr[i].roll < min)
+				{
+					min=arr[i];
+				}
+				
+			}
+			
+			return min;
+		}
+};
+
+int main()
+{
+	Student s[10];
+	
+	for(int i=0;i<2;i++)
+	{
+		int j=1;
+		s[i].put(j);
+		j++;
+	}
+	
+	for(int i=0;i<2;i++)
+	{
+		int k=1;
+		s[i].get(k);
+		k++;
+	}
+	
+	for(int i=0;i<10;i++)
+	{
+		int res= s.sort(s,s[i].roll);
+		s.get();
+	}	
+	return 0;
+	
+}
