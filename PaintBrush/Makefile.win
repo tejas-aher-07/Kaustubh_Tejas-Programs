@@ -1,0 +1,49 @@
+# Project: Project1
+# Makefile created by Dev-C++ 5.11
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+OBJ      = main.o Point.o Shape1.o Line.o Circle.o Ellipse.o Square.o Rectangle.o
+LINKOBJ  = main.o Point.o Shape1.o Line.o Circle.o Ellipse.o Square.o Rectangle.o
+LIBS     = -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib" -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc
+INCS     = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
+CXXINCS  = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
+BIN      = Shape.exe
+CXXFLAGS = $(CXXINCS) 
+CFLAGS   = $(INCS) 
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+main.o: main.cpp
+	$(CPP) -c main.cpp -o main.o $(CXXFLAGS)
+
+Point.o: Point.cpp
+	$(CPP) -c Point.cpp -o Point.o $(CXXFLAGS)
+
+Shape1.o: Shape1.cpp
+	$(CPP) -c Shape1.cpp -o Shape1.o $(CXXFLAGS)
+
+Line.o: Line.cpp
+	$(CPP) -c Line.cpp -o Line.o $(CXXFLAGS)
+
+Circle.o: Circle.cpp
+	$(CPP) -c Circle.cpp -o Circle.o $(CXXFLAGS)
+
+Ellipse.o: Ellipse.cpp
+	$(CPP) -c Ellipse.cpp -o Ellipse.o $(CXXFLAGS)
+
+Square.o: Square.cpp
+	$(CPP) -c Square.cpp -o Square.o $(CXXFLAGS)
+
+Rectangle.o: Rectangle.cpp
+	$(CPP) -c Rectangle.cpp -o Rectangle.o $(CXXFLAGS)
