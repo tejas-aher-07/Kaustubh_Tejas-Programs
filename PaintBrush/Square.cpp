@@ -6,7 +6,7 @@ using namespace std;
 Square::Square()
 {
 }
-Square::Square(int side,int thickness):Shape1(thickness){
+Square::Square(int side,int thickness):Shape(thickness){
 	this->side=side;
 }
 void Square::display(){

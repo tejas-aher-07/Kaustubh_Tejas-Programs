@@ -4,11 +4,11 @@ using namespace std;
 
 #include "Circle.h"
 #include "Point.h"
-#include "Shape1.h"
+#include "Shape.h"
 Circle::Circle()
 {
 }
-Circle::Circle(int radius,Point center, int thickness):Shape1(thickness){
+Circle::Circle(int radius,Point center, int thickness):Shape(thickness){
 	this->radius=radius;
 	this->center=center;
 }

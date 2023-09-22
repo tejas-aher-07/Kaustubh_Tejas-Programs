@@ -3,12 +3,12 @@ using namespace std;
 
 #include "Line.h"
 #include "Point.h"
-#include "Shape1.h"
+#include "Shape.h"
 Line::Line()
 {
 	
 }
-Line::Line(Point start_Point,Point end_Point,int thickness):Shape1(thickness){
+Line::Line(Point start_Point,Point end_Point,int thickness):Shape(thickness){
 	this->start_Point=start_Point;
 	this->end_Point=end_Point;
 }

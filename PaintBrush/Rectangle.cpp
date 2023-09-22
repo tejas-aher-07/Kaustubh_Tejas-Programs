@@ -5,7 +5,7 @@ using namespace std;
 Rectangle::Rectangle()
 {
 }
-Rectangle::Rectangle(int lenght,int breadth,int thickness):Shape1(thickness){
+Rectangle::Rectangle(int lenght,int breadth,int thickness):Shape(thickness){
 	this->length=lenght;
 	this->breadth=breadth;
 }
@@ -18,3 +18,4 @@ int Rectangle::area()
 {
 	return length * breadth;
 }
+
