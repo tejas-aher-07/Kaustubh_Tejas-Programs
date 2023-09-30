@@ -1,0 +1,8 @@
+1)Declare a user define class string, having data members int length and pointer of char array.
+Do the following tasks:-
+   1) default constructor
+   2)paramaterized constructor
+   3)overload paramaterized constructor(one with int, second with both parameters)
+   4) Copy Constructor
+   5) Destructor
+and also do all operations using acceptString() and displayString() functions.

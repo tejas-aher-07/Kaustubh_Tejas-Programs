@@ -1,9 +1,9 @@
 #ifndef CIRCLE_H
 #define CIRCLE_H
 
-#include "Shape1.h"
+#include "Shape.h"
 #include "Point.h"
-class Circle : public Shape1
+class Circle : public Shape
 {
 	int radius;
 	Point center;

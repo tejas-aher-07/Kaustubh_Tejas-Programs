@@ -1,0 +1,5 @@
+2)Do the following operations using userdefined functions. Do not use <string.h>
+   1) String Length
+   2) String Concatenate
+   3) String Copy
+   4) create pointer of array of characters.

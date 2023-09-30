@@ -1,9 +1,9 @@
 #ifndef SQUARE_H
 #define SQUARE_H
 
-#include "Shape1.h"
+#include "Shape.h"
 
-class Square : public Shape1
+class Square : public Shape
 {
 	int side;
 	public:

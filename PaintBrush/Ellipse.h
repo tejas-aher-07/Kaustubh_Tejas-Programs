@@ -1,9 +1,9 @@
 #ifndef ELLIPSE_H
 #define ELLIPSE_H
 
-#include "Shape1.h"
+#include "Shape.h"
 #include "Point.h"
-class Ellipse : public Shape1
+class Ellipse : public Shape
 {
 	Point center;
 	int length,height;

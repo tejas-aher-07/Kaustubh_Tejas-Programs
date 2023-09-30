@@ -5,7 +5,7 @@ using namespace std;
 Ellipse::Ellipse()
 {
 }
-Ellipse::Ellipse(Point center,int length,int height,int thickness):Shape1(thickness){
+Ellipse::Ellipse(Point center,int length,int height,int thickness):Shape(thickness){
 	this->center=center;
 	this->length=length;
 	this->height=height;
