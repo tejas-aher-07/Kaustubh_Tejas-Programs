@@ -1,28 +1,39 @@
-#include<iostream>
-using namespace std;
-#include<String.h>
-class String1{
-	int len;
-	char* ptr;
-	public:
-		String1(){
-			this->len=0;
-			this->ptr='\0';
-		}
-		String1(int len, const char* name){
-			this->len=len;
-			ptr = new char[len+1];
-			strcpy(ptr,name);
-		}
-		void display(){
-			cout<<"Length is : "<<len<<endl;
-			cout<<"Name is : "<<ptr<<endl;
-		}
+Certainly, here's the corrected code with `NULL` instead of `nullptr`:
+
+```cpp
+#include <iostream>
+#include <cstring>
+
+class String1 {
+    int len;
+    char* ptr;
+
+public:
+    String1() {
+        len = 0;
+        ptr = NULL;  // Initialize with NULL
+    }
+
+    String1(int len, const char* name) {
+        this->len = len;
+        ptr = new char[len + 1];
+        strcpy(ptr, name);
+    }
+
+    void display() {
+        std::cout << "Length is : " << len << std::endl;
+        std::cout << "Name is : " << ptr << std::endl;
+    }
 };
 
-int main(){
-	String1 s;
-	s.display();
-	String1 s1(10,"Kaustubh");
-	s1.display();
+int main() {
+    String1 s;
+    s.display();
+    String1 s1(10, "Kaustubh");
+    s1.display();
+    
+    return 0;  // You should return 0 from the main function to indicate successful execution
 }
+```
+
+This code should work as expected and display the output.
