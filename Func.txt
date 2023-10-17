@@ -1,0 +1,31 @@
+drop function if exists addSalary;
+delimiter $
+create function addSalary(_deptno int) returns int
+deterministic
+begin
+	declare ct int;
+	declare sume int;
+	declare flag BOOL;
+	set sume:=0;
+	select max(r1) into ct from (Select row_number() over(order by sal) r1,emp.* from emp where deptno=_deptno) e;
+	select distinct true into flag from emp where deptno = _deptno;
+	lbl:LOOP
+		if1:if flag THEN
+			if2:IF ct>0 then
+				set sume := sume + (select sal from (Select row_number() over(order by sal) r1,emp.* 
+				from emp where deptno=_deptno) e where e.r1=ct );
+				set ct := ct - 1;
+			ELSE
+				leave lb1;
+			end if if2;
+		ELSE
+			leave lb1;
+		end if if1;
+	end loop lbl;
+	if ct=0 then
+		select "Data inserted";
+	ELSE
+		select "Deptno not found";
+	return sume;
+end $
+delimiter ;
