@@ -13,6 +13,10 @@ BEGIN
 	declare c5 cursor for select * from Emp_detail where deptno=50;
 	
 	open c1;
+	open c2;
+	open c3;
+	open c4;
+	open c5;
 	
 	loop11:loop
 		
@@ -37,12 +41,21 @@ BEGIN
 		elseif(_deptno = 50)
 			select dept_no as 'Department Number ',"->",name as 'Employee Name' from Emp_detail;
 			
-		end if;
 		else 
 			leave loop11;
+		
+		end if;
 
 	end loop loop11;
 	close c1;
+	close c2;
+	close c3;
+	close c4;
+	close c5;
 end $ 
 
 delimiter ;
+
+You have an error in your SQL syntax; check the manual that corresponds to your MySQL 
+server version for the right syntax to use near 'select dept_no as 'Department Number '
+,"->",name as 'Employee Name' from Emp_det' at line 27
