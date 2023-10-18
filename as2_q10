@@ -1,0 +1,48 @@
+drop procedure if exists Emp_Details;
+delimiter $ 
+
+create procedure Emp_Details()
+
+BEGIN
+	declare _deptno int;
+	declare _ename varchar(20);
+	declare c1 cursor for select * from Emp_detail where deptno=10;
+	declare c2 cursor for select * from Emp_detail where deptno=20;
+	declare c3 cursor for select * from Emp_detail where deptno=30;
+	declare c4 cursor for select * from Emp_detail where deptno=40;
+	declare c5 cursor for select * from Emp_detail where deptno=50;
+	
+	open c1;
+	
+	loop11:loop
+		
+		fetch c1 into _deptno, _ename;
+		fetch c2 into _deptno, _ename;
+		fetch c3 into _deptno, _ename;
+		fetch c4 into _deptno, _ename;
+		fetch c5 into _deptno, _ename;
+		
+		if(_deptno = 10)
+			select dept_no as 'Department Number ',"->",name as 'Employee Name' from Emp_detail;
+		
+		elseif(_deptno = 20)
+			select dept_no as 'Department Number ',"->",name as 'Employee Name' from Emp_detail;
+			
+		elseif(_deptno = 30)
+			select dept_no as 'Department Number ',"->",name as 'Employee Name' from Emp_detail;
+			
+		elseif(_deptno = 40)
+			select dept_no as 'Department Number ',"->",name as 'Employee Name' from Emp_detail;
+			
+		elseif(_deptno = 50)
+			select dept_no as 'Department Number ',"->",name as 'Employee Name' from Emp_detail;
+			
+		end if;
+		else 
+			leave loop11;
+
+	end loop loop11;
+	close c1;
+end $ 
+
+delimiter ;
