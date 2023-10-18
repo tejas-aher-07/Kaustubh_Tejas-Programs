@@ -1,10 +1,7 @@
-drop procedure if exists Emp_Details;
-delimiter $ 
-
 create procedure Emp_Details()
 
 BEGIN
-	declare _deptno int;
+	declare _deptno1,_deptno2,_deptno3,_deptno4,_deptno5 int;
 	declare _ename varchar(20);
 	declare c1 cursor for select * from Emp_detail where deptno=10;
 	declare c2 cursor for select * from Emp_detail where deptno=20;
@@ -20,26 +17,26 @@ BEGIN
 	
 	loop11:loop
 		
-		fetch c1 into _deptno, _ename;
-		fetch c2 into _deptno, _ename;
-		fetch c3 into _deptno, _ename;
-		fetch c4 into _deptno, _ename;
-		fetch c5 into _deptno, _ename;
+		fetch c1 into _deptno1, _ename;
+		fetch c2 into _deptno2, _ename;
+		fetch c3 into _deptno3, _ename;
+		fetch c4 into _deptno4, _ename;
+		fetch c5 into _deptno5, _ename;
 		
-		if(_deptno = 10)
-			select dept_no as 'Department Number ',"->",name as 'Employee Name' from Emp_detail;
+		if(_deptno1 = 10)
+			select _deptno as 'Department Number ',"->",_ename as 'Employee Name';
 		
-		elseif(_deptno = 20)
-			select dept_no as 'Department Number ',"->",name as 'Employee Name' from Emp_detail;
+		elseif(_deptno2 = 20)
+			select _deptno as 'Department Number ',"->",_ename as 'Employee Name';
 			
-		elseif(_deptno = 30)
-			select dept_no as 'Department Number ',"->",name as 'Employee Name' from Emp_detail;
+		elseif(_deptno3 = 30)
+			select _deptno as 'Department Number ',"->",_ename as 'Employee Name';
 			
-		elseif(_deptno = 40)
-			select dept_no as 'Department Number ',"->",name as 'Employee Name' from Emp_detail;
+		elseif(_deptno4 = 40)
+			select _deptno as 'Department Number ',"->",_ename as 'Employee Name';
 			
-		elseif(_deptno = 50)
-			select dept_no as 'Department Number ',"->",name as 'Employee Name' from Emp_detail;
+		elseif(_deptno5 = 50)
+			select _deptno as 'Department Number ',"->",_ename as 'Employee Name';
 			
 		else 
 			leave loop11;
@@ -55,7 +52,3 @@ BEGIN
 end $ 
 
 delimiter ;
-
-You have an error in your SQL syntax; check the manual that corresponds to your MySQL 
-server version for the right syntax to use near 'select dept_no as 'Department Number '
-,"->",name as 'Employee Name' from Emp_det' at line 27
